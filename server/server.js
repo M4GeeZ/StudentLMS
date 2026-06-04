@@ -20,6 +20,14 @@ app.get('/', (req, res) => {
   res.json({ message: 'Student Management System API is running' });
 });
 
+app.get("/", (req, res) => {
+  res.send("Student LMS Backend is running");
+});
+
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "ok" });
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/students', studentRoutes);
 app.use("/api/assignments", assignmentRoutes); 
